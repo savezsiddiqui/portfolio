@@ -4,16 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="sm" bg="transparent" variant="light">
-            <Navbar.Brand>Portfolio</Navbar.Brand>
+        <Navbar collapseOnSelect={true} expand="sm" bg="transparent" variant="light">
+            <Navbar.Brand>Savez Siddiqui</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Link className='nav-link' to='/home'>Home</Link>
-                    <Link className='nav-link' to='/experience'>Experience</Link>
-                    <Link className='nav-link' to='/projects'>Projects</Link>
-                    <Link className='nav-link' to='/education'>Education</Link>
-                    <Link className='nav-link' to='/about'>About</Link>
+                    <Link className='nav-link' to='/home'><i class="fas fa-home"></i>{' '}Home</Link>
+                    <Link className='nav-link' to='/experience'><i class="far fa-star"></i>{' '}Experience</Link>
+                    <Link className='nav-link' to='/projects'><i class="fas fa-tasks"></i>{' '}Projects</Link>
+                    <Link className='nav-link' to='/about'><i class="far fa-address-card"></i>{' '}About</Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

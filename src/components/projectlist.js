@@ -25,7 +25,10 @@ export const projectList = [
     {
         title: 'Windtoll Ethereum Distributor',
         created: 'Mar 2020',
-        description: `A framework for generating power using small wind mills on highway side that rotate automatically with the speed of the air flowing due to car speed. Each car that contributes in power generation is paid in cryptocurrency and that can be used to get fuel or pay tolls.`,
+        description: `A framework for generating power using small wind mills on highway side
+        that rotate automatically with the speed of the air flowing due to car speed.
+        Each car that contributes in power generation is paid in cryptocurrency and that
+        can be used to get fuel or pay tolls.`,
         demo_link: '',
         github_link: ''
     },

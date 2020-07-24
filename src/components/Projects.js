@@ -1,23 +1,41 @@
-import React from 'react'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import React from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { projectList } from './projectlist';
+import { useSpring, animated } from 'react-spring';
 
-const projectCard = ({ title, created, description, github_link, demo_link }) =>
-    <Col xs={12} md={6} lg={4} className='p-4' key={title}>
-        <Card style={{ width: "100%", border: "1px solid #ffff" }}>
-            <Card.Body className='shadow'>
-                <Card.Title>{title}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{created}</Card.Subtitle>
-                <Card.Text>{description}</Card.Text>
-                <Button variant='link' className='p-0 m-0' href={demo_link} disabled={demo_link !== '' ? false : true}>Demo Link</Button>
-                <Button variant='link' className='pl-2 p-0 m-0' href={github_link} disabled={github_link !== '' ? false : true}>Github Link</Button>
-            </Card.Body>
-        </Card>
-    </Col>
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
+const trans = (x, y, s) => `perspective(600px) scale(${s})`
+
+const ProjectCard = ({ project }) => {
+
+    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }));
+    const { title, created, description, demo_link, github_link } = project;
+
+    return (
+        <Col xs={12} md={6} lg={4} className='p-4'>
+            <animated.div
+                onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+                onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                style={{ transform: props.xys.interpolate(trans) }}
+            >
+                <Card style={{ width: "100%", border: "1px solid #ffff" }}>
+                    <Card.Body className='shadow'>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{created}</Card.Subtitle>
+                        <Card.Text>{description}</Card.Text>
+    <Button variant='link' className='p-0 m-0' href={demo_link} disabled={demo_link !== '' ? false : true}><i class="fas fa-desktop"></i>{' '}Demo Link</Button>
+    <Button variant='link' className='pl-2 p-0 m-0' href={github_link} disabled={github_link !== '' ? false : true}><i class="fab fa-github"></i>{' '}Github Link</Button>
+                    </Card.Body>
+                </Card>
+            </animated.div>
+        </Col>
+    )
+}
+
 
 const Projects = () => {
 
-    const cards = projectList.map(project => projectCard(project))
+    const cards = projectList.map(project => <ProjectCard project={project} key={project.title} />)
 
     return (
         <Container fluid={true}>
@@ -31,4 +49,4 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default Projects;
