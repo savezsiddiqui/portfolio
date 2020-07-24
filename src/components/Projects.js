@@ -18,15 +18,13 @@ const ProjectCard = ({ project }) => {
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
                 style={{ transform: props.xys.interpolate(trans) }}
             >
-                <Card style={{ width: "100%", border: "1px solid #ffff" }}>
-                    <Card.Body className='shadow'>
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">{created}</Card.Subtitle>
-                        <Card.Text>{description}</Card.Text>
-    <Button variant='link' className='p-0 m-0' href={demo_link} disabled={demo_link !== '' ? false : true}><i class="fas fa-desktop"></i>{' '}Demo Link</Button>
-    <Button variant='link' className='pl-2 p-0 m-0' href={github_link} disabled={github_link !== '' ? false : true}><i class="fab fa-github"></i>{' '}Github Link</Button>
-                    </Card.Body>
-                </Card>
+                <Card.Body className='shadow'>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{created}</Card.Subtitle>
+                    <Card.Text>{description}</Card.Text>
+                    <Button variant='link' className='p-0 m-0' href={demo_link} disabled={demo_link !== '' ? false : true}><i class="fas fa-desktop"></i>{' '}Demo Link</Button>
+                    <Button variant='link' className='pl-2 p-0 m-0' href={github_link} disabled={github_link !== '' ? false : true}><i class="fab fa-github"></i>{' '}Github Link</Button>
+                </Card.Body>
             </animated.div>
         </Col>
     )

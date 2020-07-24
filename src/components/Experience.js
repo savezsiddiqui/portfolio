@@ -61,7 +61,7 @@ const ExpCard = ({ experience }) => {
     const { company, image, date, description, link } = experience;
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }));
     return (
-        <animated.div className='col-xs-12 col-sm-6 col-md-4 shadow-sm mx-4 my-2 rounded'
+        <animated.div className='col-xs-12 col-sm-6 col-md-4 shadow mx-4 my-2 rounded'
             onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
             style={{ transform: props.xys.interpolate(trans) }}

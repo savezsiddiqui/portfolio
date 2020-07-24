@@ -38,8 +38,6 @@ body {
   font-family: "patrick hand sc";
 }
 
-
-
 /* social icons */
 .social-icons .social-icon {
   display: inline-flex;
@@ -66,8 +64,22 @@ body {
   color: gray;
 }
 
-.certi-item, .certi-item a{
+.certi-item,
+.certi-item a {
   font-size: 1.2rem;
   margin: 1rem;
-  color:teal;
+  color: teal;
+}
+
+/* flipping about image */
+.c {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+}
+
+.about-div {
+  width: 100%;
+  height: 300px;
+  margin: 5% 0%;
 }
