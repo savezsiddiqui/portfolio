@@ -22,7 +22,7 @@ const AnimatedHeading = () => {
 const Home = () => {
 
     return (
-        <Container style={{ height: "100%" }}>
+        <Container>
             <Row className='justify-content-center text-center py-5'>
                 <Col xs={12} md={8} lg={6}>
                     <AnimatedHeading />
@@ -32,7 +32,7 @@ const Home = () => {
                     <div className="social-icons pt-5">
                         <a className="social-icon" href="https://www.linkedin.com/in/savez-siddiqui-53564617a/"><i className="fab fa-linkedin-in"></i></a>
                         <a className="social-icon" href="http://github.com/savezsiddiqui/"><i className="fab fa-github"></i></a>
-                        <a className="social-icon" href="https://twitter.com/account/access"><i className="fab fa-twitter"></i></a>
+                        <a className="social-icon" href="https://twitter.com/siddiqui_savez"><i className="fab fa-twitter"></i></a>
                     </div>
                 </Col>
             </Row>

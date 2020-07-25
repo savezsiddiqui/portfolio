@@ -3,6 +3,7 @@
 
 .container {
   padding-top: 2rem;
+  min-height: 100vh;
 }
 
 .light-mode {
