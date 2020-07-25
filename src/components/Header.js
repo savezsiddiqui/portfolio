@@ -7,7 +7,7 @@ const Header = ({ darkMode, set }) => {
     const [expand, setExpand] = useState(false);
 
     return (
-        <Navbar className='fixed-top shadow-sm' style={{ background: darkMode ? '#181a1b' : '#ffff' }} expand='md' variant={darkMode ? 'dark' : 'light'} expanded={expand} onToggle={() => setExpand(!expand)}>
+        <Navbar className='fixed-top shadow-sm' expand='md' variant={darkMode ? 'dark' : 'light'} expanded={expand} onToggle={() => setExpand(!expand)}>
             <Navbar.Brand onClick={() => { set(!darkMode) }}>
                 <i className={darkMode ? "far fa-sun" : "far fa-moon"}></i>{' '}
                 Savez Siddiqui
