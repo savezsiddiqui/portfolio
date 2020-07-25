@@ -28,7 +28,7 @@ const certificates = [
 const experience = [
     {
         company: 'Fashn.me',
-        image: 'fashn.me.png',
+        image: '/portfolio/fashn.me.png',
         date: 'Jan 2020 - Feb 2020',
         description: `Worked as a backend engineer to develop backend for
         Patang App. Later worked on a bootstrap based Admin Dashboard.`,
@@ -36,7 +36,7 @@ const experience = [
     },
     {
         company: 'Jiit',
-        image: 'jiit.png',
+        image: '/portfolio/jiit.png',
         date: 'May 2020 - Jun 2020',
         description: `Interned within the college for 6 weeks and created
         DevConnector. Worked both on the front-end and backend.`,
@@ -48,7 +48,6 @@ const CertiItem = ({ certi }) => {
     const { title, link } = certi;
     return (
         <li className='certi-item'>
-            <i className="far fa-star"></i>{' '}
             <a href={link}>{title}</a>
         </li>
     )
@@ -81,10 +80,10 @@ const ExpCard = ({ experience }) => {
 
 const Experience = () => {
     return (
-        <Container fluid={true}>
+        <Container >
             <Row className="text-center justify-content-center">
                 <Col xs={12}>
-                    <h1 className="display-4 font-weight-bolder py-4">Experience</h1>
+                    <h1 className="display-3 font-weight-bolder my-4 py-4">Experience</h1>
                 </Col>
                 {experience.map((exp, i) => <ExpCard experience={exp} key={i} />)}
                 <Col xs={12}>
@@ -99,7 +98,7 @@ const Experience = () => {
                         <li className="list-inline-item"><i className="fab fa-npm"></i></li>
                     </ul>
                 </Col>
-                <Col xs={12} md={6} lg={4}>
+                <Col xs={12} md={8} lg={6}>
                     <h1 className="display-4 font-weight-bolder">Certifications</h1>
                     <ul className='list-inline'>
                         {certificates.map((certi, i) => <CertiItem certi={certi} key={i} />)}

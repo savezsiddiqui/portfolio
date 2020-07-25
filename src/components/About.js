@@ -35,7 +35,7 @@ const About = () => {
     );
 
     return (
-        <Container fluid={true}>
+        <Container >
             <Row className="text-center justify-content-center">
                 <Col xs={12} className='p-0'>
                     <h1 className="display-1 font-weight-bolder py-4">About</h1>
@@ -43,13 +43,12 @@ const About = () => {
                 <Col className="display-6" lg={8}>
                     <div className='text-center about-div' onClick={() => set(!flipped)}>
                         <animated.div className='c' style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>
-                            <img src='emma_watson.jpg' alt="#" className="about_image mb-3" />
+                            <img src='/portfolio/savez.jpg' alt="#" className="about_image mb-3" />
                         </animated.div>
                         <animated.div className='c' style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
-                            <img src='stark.jpg' alt="#" className="about_image mb-3" />
+                            <img src='/portfolio/stark.jpg' alt="#" className="about_image mb-3" />
                         </animated.div>
                     </div>
-                    {/* <img src='emma_watson.jpg' alt="#" className="about_image mb-3" /> */}
                     {animation}
                 </Col>
             </Row>

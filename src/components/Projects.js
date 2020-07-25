@@ -36,7 +36,7 @@ const Projects = () => {
     const cards = projectList.map(project => <ProjectCard project={project} key={project.title} />)
 
     return (
-        <Container fluid={true}>
+        <Container >
             <Row>
                 <Col xs={12} className='text-center my-5'>
                     <h1 className="display-1 font-weight-bolder">Projects</h1>
