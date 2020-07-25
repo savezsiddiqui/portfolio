@@ -38,7 +38,7 @@ const About = () => {
         <Container >
             <Row className="text-center justify-content-center">
                 <Col xs={12} className='p-0'>
-                    <h1 className="display-1 font-weight-bolder py-4">About</h1>
+                    <h1 className="display-3 font-weight-bolder py-4 my-4">About</h1>
                 </Col>
                 <Col className="display-6" lg={8}>
                     <div className='text-center about-div' onClick={() => set(!flipped)}>

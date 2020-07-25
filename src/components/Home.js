@@ -22,7 +22,7 @@ const AnimatedHeading = () => {
 const Home = () => {
 
     return (
-        <Container style={{ height: "100vh" }}>
+        <Container style={{ height: "100%" }}>
             <Row className='justify-content-center text-center py-5'>
                 <Col xs={12} md={8} lg={6}>
                     <AnimatedHeading />

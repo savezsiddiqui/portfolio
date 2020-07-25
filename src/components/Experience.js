@@ -83,7 +83,7 @@ const Experience = () => {
         <Container >
             <Row className="text-center justify-content-center">
                 <Col xs={12}>
-                    <h1 className="display-3 font-weight-bolder my-4 py-4">Experience</h1>
+                    <h1 className="display-4 font-weight-bolder my-4 py-4">Experience</h1>
                 </Col>
                 {experience.map((exp, i) => <ExpCard experience={exp} key={i} />)}
                 <Col xs={12}>
@@ -99,7 +99,7 @@ const Experience = () => {
                     </ul>
                 </Col>
                 <Col xs={12} md={8} lg={6}>
-                    <h1 className="display-4 font-weight-bolder">Certifications</h1>
+                    <h1 className="font-weight-bolder" style={{fontSize: '3rem'}}>Certifications</h1>
                     <ul className='list-inline'>
                         {certificates.map((certi, i) => <CertiItem certi={certi} key={i} />)}
                     </ul>
