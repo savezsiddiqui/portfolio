@@ -12,7 +12,7 @@ const Header = ({ darkMode, set }) => {
                 <i className={darkMode ? "far fa-sun" : "far fa-moon"}></i>{' '}
                 Savez Siddiqui
             </Navbar.Brand>
-            <Navbar.Toggle />
+            <Navbar.Toggle/>
             <Navbar.Collapse>
                 <Nav className="ml-auto">
                     <Link className='nav-link' onClick={() => setExpand(false)} to='/home'><i className="fas fa-home"></i>{' '}Home</Link>

@@ -30,11 +30,9 @@
   font-size: 1.5rem;
 }
 
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  border: none;
-  outline: none;
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
 }
 
 .display-6 {
@@ -91,15 +89,15 @@
 }
 
 .dark-mode {
-  background-color: #1b1b1b;
+  background-color: #102027;
   border-color: #736b5e;
   color: #e8e6e3;
 }
 
 .dark-mode .navbar {
-  background-color: #1b1b1b;
+  background-color: #102027;
 }
 
 .dark-mode .card-body {
-  background-color: #1b1b1b;
+  background-color: #102027;
 }
