@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
+import TopNav from './components/TopNav';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import BottomNav from './components/BottomNav';
 import './App.css';
 
 const initialState = () => {
@@ -23,7 +24,9 @@ const App = () => {
   return (
     <div className={darkMode ? 'dark-mode' : 'light-mode'}>
       <HashRouter>
-        <Header darkMode={darkMode} set={set} />
+        <div className='d-none d-sm-block' style={{ padding: '2rem' }}>
+          <TopNav darkMode={darkMode} set={set} />
+        </div>
         <Switch>
           <Route exact path='/home' component={Home} />
           <Route exact path='/about' component={About} />
@@ -31,6 +34,9 @@ const App = () => {
           <Route exact path='/experience' component={Experience} />
           <Route exact path='/' component={Home} />
         </Switch>
+        <div className='d-sm-none' style={{ padding: '2rem' }}>
+          <BottomNav darkMode={darkMode} set={set} />
+        </div>
       </HashRouter>
     </div>
   )
