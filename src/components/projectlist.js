@@ -29,7 +29,7 @@ export const projectList = [
         that rotate automatically with the speed of the air flowing due to car speed.
         Each car that contributes in power generation is paid in cryptocurrency and that
         can be used to get fuel or pay tolls.`,
-        demo_link: '',
+        demo_link: 'https://drive.google.com/file/d/1p69wzCdHx9bjtge2p1VzzwqyBAwiFPYu/view?usp=sharing',
         github_link: 'https://github.com/savezsiddiqui/wintoll-ui'
     },
     {
