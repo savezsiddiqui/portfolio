@@ -22,8 +22,8 @@ const ProjectCard = ({ project }) => {
                     <Card.Title>{title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{created}</Card.Subtitle>
                     <Card.Text>{description}</Card.Text>
-                    <Button variant='link' className='p-0 m-0 shadow-none' href={demo_link} disabled={demo_link !== '' ? false : true}><i class="fas fa-desktop"></i>{' '}Demo Link</Button>
-                    <Button variant='link' className='pl-2 p-0 m-0 shadow-none' href={github_link} disabled={github_link !== '' ? false : true}><i class="fab fa-github"></i>{' '}Github Link</Button>
+                    <Button variant='link' className='p-0 m-0 shadow-none' href={demo_link} disabled={demo_link !== '' ? false : true}><i className="fas fa-desktop"></i>{' '}Demo Link</Button>
+                    <Button variant='link' className='pl-2 p-0 m-0 shadow-none' href={github_link} disabled={github_link !== '' ? false : true}><i className="fab fa-github"></i>{' '}Github Link</Button>
                 </Card.Body>
             </animated.div>
         </Col>

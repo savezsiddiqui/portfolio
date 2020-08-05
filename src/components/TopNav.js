@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const TopNav = ({ darkMode, set }) => {
     return (
-        <Navbar className='fixed-top' variant={darkMode ? 'dark' : 'light'}>
+        <Navbar className='fixed-top shadow' variant={darkMode ? 'dark' : 'light'}>
             <Navbar.Brand onClick={() => { set(!darkMode) }}>
                 <i className={darkMode ? "far fa-sun" : "far fa-moon"}></i>{' '}
                 Savez Siddiqui

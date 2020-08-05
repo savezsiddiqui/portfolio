@@ -10,6 +10,15 @@
   font-family: "Mulish";
 }
 
+.glow:hover {
+  color: var(--color);
+  filter: drop-shadow(0 0 1.5rem var(--color));
+}
+
+.shadow {
+  box-shadow: 0 0 1rem rgba(0,0,0,.25) !important;
+}
+
 .exp_image {
   border-radius: 50%;
   padding: 5%;

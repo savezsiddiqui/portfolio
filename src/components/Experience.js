@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Col, Container, Card } from 'react-bootstrap';
 import { useSpring, animated } from 'react-spring';
 
 const certificates = [
     {
         title: 'Mern Stack front to back',
+        image: '/portfolio/certificates/udemy.png',
         link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-3cdd77f0-25c7-473b-8f9d-d010639193fe.pdf'
     },
     {
         title: 'Problem Solving Intermediate',
+        image: '/portfolio/certificates/hackerrank.png',
         link: 'https://www.hackerrank.com/certificates/ed28cca521af'
     },
     {
         title: 'Front-End Web Development with React',
+        image: '/portfolio/certificates/coursera-react.png',
         link: 'https://www.coursera.org/account/accomplishments/verify/TY9DY8GZ3Z49'
     },
     {
         title: 'Front-End Web UI Frameworks and Tools: Bootstrap 4',
+        image: '/portfolio/certificates/coursera-bootstrap.png',
         link: 'https://www.coursera.org/account/accomplishments/verify/EVQWQRTTKYU7'
     },
     {
         title: 'Android App Development',
+        image: '/portfolio/certificates/internshala.jpg',
         link: 'https://trainings.internshala.com/certificate/preview/android/coe/dashbaord?score=true'
     }
 ];
@@ -44,14 +49,37 @@ const experience = [
     }
 ]
 
-const CertiItem = ({ certi }) => {
-    const { title, link } = certi;
-    return (
-        <li className='certi-item'>
-            <a href={link}>{title}</a>
-        </li>
-    )
-}
+const skills = [
+    {
+        icon: 'fab fa-html5',
+        color: '#E44D26'
+    },
+    {
+        icon: 'fab fa-css3-alt',
+        color: '#264de4'
+    },
+    {
+        icon: 'fab fa-js-square',
+        color: '#F0DB4F'
+    },
+    {
+        icon: 'fab fa-react',
+        color: '#61DBFB'
+    },
+    {
+        icon: 'fab fa-node-js',
+        color: '#68A063'
+    },
+    {
+        icon: 'fab fa-sass',
+        color: '#c69'
+    },
+    {
+        icon: 'fab fa-npm',
+        color: '#CC3534'
+    }
+]
+
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1];
 const trans = (x, y, s) => `perspective(600px) scale(${s})`;
@@ -72,15 +100,17 @@ const ExpCard = ({ experience }) => {
                 <Card.Text>
                     {description}
                 </Card.Text>
-                <Card.Link href={link}><i class="fas fa-link"></i></Card.Link>
+                <Card.Link href={link}><i className="fas fa-link"></i></Card.Link>
             </Card.Body>
         </animated.div>
     )
 }
 
+
 const Experience = () => {
+
     return (
-        <Container >
+        <Container>
             <Row className="text-center justify-content-center">
                 <Col xs={12}>
                     <h1 className="display-4 font-weight-bolder my-4 py-4">Experience</h1>
@@ -89,21 +119,25 @@ const Experience = () => {
                 <Col xs={12}>
                     <h1 className="display-4 font-weight-bolder pt-4">Skills</h1>
                     <ul className="list-inline">
-                        <li className="list-inline-item"><i className="fab fa-html5"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-css3-alt"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-js-square"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-react"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-node-js"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-sass"></i></li>
-                        <li className="list-inline-item"><i className="fab fa-npm"></i></li>
+                        {
+                            skills.map(({ icon, color }, index) =>
+                                <li className="list-inline-item glow" key={index} style={{ ['--color']: color }}>
+                                    <i className={icon}></i>
+                                </li>
+                            )
+                        }
                     </ul>
                 </Col>
-                <Col xs={12} md={8} lg={6}>
-                    <h1 className="font-weight-bolder" style={{fontSize: '3rem'}}>Certifications</h1>
-                    <ul className='list-inline'>
-                        {certificates.map((certi, i) => <CertiItem certi={certi} key={i} />)}
-                    </ul>
+                <Col xs={12}>
+                    <h1 className="font-weight-bolder" style={{ fontSize: '3rem' }}>Certifications</h1>
                 </Col>
+                {
+                    certificates.map(({ image }) =>
+                        <Col className='p-0 m-3' xs={8} sm={3}>
+                            <Card.Img variant='top' src={image} />
+                        </Col>
+                    )
+                }
             </Row>
         </Container>
     )
